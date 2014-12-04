@@ -1,0 +1,14 @@
+{
+  "publisher": {
+    "port": 8000
+  },
+  "udpReceiver": {
+    "port": 8001
+  },
+  "tcpReceiver": {
+    "port": 8002
+  },
+  "relpReceiver": {
+    "port": 8003
+  }
+}
