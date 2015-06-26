@@ -9,6 +9,6 @@ platforms:
 - name: centos-6.4
 
 suites:
-  - name: syslog-publisher
+- name: syslog-publisher
   run_list:
-    - recipe[syslog-publisher::default]
+  - recipe[syslog-publisher::default]

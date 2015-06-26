@@ -93,7 +93,7 @@ describe 'syslog-publisher::default' do
       mode: 0755,
       variables: {
         user: 'test-user',
-        home: '/home/test-user',
+        config: '/home/test-user/config.json',
         service_name: 'test-name',
         service_description: 'test description',
         install_dir: '/opt/test'

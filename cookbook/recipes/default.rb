@@ -69,6 +69,11 @@ template config_file do
     receiver_tcp_port: syslog_publisher_receiver_tcp_port,
     receiver_relp_port: syslog_publisher_receiver_relp_port
   )
+  notifies(
+    :restart,
+    "service[#{syslog_publisher_service_name}]",
+    :delayed
+  )
 end
 
 template init_script do
@@ -76,10 +81,15 @@ template init_script do
   mode 0755
   variables(
     user: syslog_publisher_user,
-    home: syslog_publisher_home,
+    config: config_file,
     service_name: syslog_publisher_service_name,
     service_description: syslog_publisher_service_description,
     install_dir: syslog_publisher_install_dir
+  )
+  notifies(
+    :restart,
+    "service[#{syslog_publisher_service_name}]",
+    :delayed
   )
 end
 

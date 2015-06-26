@@ -54,7 +54,7 @@
 # MIN_UPTIME="5000"
 # SPIN_SLEEP_TIME="2000"
  
-NAME="<%= @service_description %>"
+NAME="<%= @service_name %>"
 NODE_BIN_DIR="/usr/local/node/bin"
 NODE_PATH="/usr/local/lib/node_modules"
 APPLICATION_PATH="<%= @install_dir %>/src/index.coffee"
@@ -64,7 +64,7 @@ MIN_UPTIME="5000"
 SPIN_SLEEP_TIME="2000"
 FOREVER_ARGS="-c coffee"
 USER="<%= @user %>"
-CONFIG_DIR="<%= @home %>"
+CONFIG="<%= @config %>"
  
 # Add node to the path for situations in which the environment is passed.
 PATH=$NODE_BIN_DIR:$PATH
@@ -111,7 +111,7 @@ start() {
       --minUptime $MIN_UPTIME \
       --spinSleepTime $SPIN_SLEEP_TIME \
       $FOREVER_ARGS \
-      start $APPLICATION_PATH $CONFIG_DIR 2>&1 > /dev/null &
+      start $APPLICATION_PATH $CONFIG 2>&1 > /dev/null &
     RETVAL=$?
 }
  
