@@ -17,7 +17,7 @@ default['syslog-publisher']['install_dir'] =
 default['syslog-publisher']['service_name'] =
   'syslog-publisher'
 default['syslog-publisher']['service_description'] =
-  'Receives syslog messages over UDP and publishes them to connected clients'
+  'Receives syslog messages over UDP/TCP/RELP and publishes them to connected Socket.IO clients'
 default['syslog-publisher']['repository'] =
   'https://github.com/pghalliday/syslog-publisher.git'
 default['syslog-publisher']['revision'] =
