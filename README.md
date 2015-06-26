@@ -1,7 +1,7 @@
 syslog-publisher
 ================
 
-Receive syslog messages over UDP/TCP/RELP and publishe them to connected Socket.IO clients
+Receive syslog messages over UDP/TCP/RELP and publish them to connected Socket.IO clients
 
 Prerequisites
 -------------
