@@ -58,7 +58,7 @@ git syslog_publisher_install_dir do
   )
   notifies(
     :run,
-    "bash[install modules]",
+    'bash[install modules]',
     :immediately
   )
 end

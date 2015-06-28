@@ -39,7 +39,7 @@ describe 'TCPReceiver', ->
     deferred = Q.defer()
     publisher.publishMethod = sinon.spy (message) ->
       message.msg.should.eql 'This is a test'
-      message.source.should.eql '127.0.0.1'
+      message.source.should.eql '::ffff:127.0.0.1'
       message.protocol.should.eql 'tcp'
       deferred.resolve()
     socket = net.connect

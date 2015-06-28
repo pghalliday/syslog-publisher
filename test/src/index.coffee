@@ -87,7 +87,7 @@ describe 'syslog-publisher', ->
       .done()
     deferred.promise.should.become
       msg: 'This is a test'
-      source: '127.0.0.1'
+      source: '::ffff:127.0.0.1'
       protocol: 'tcp'
 
   # TODO: figure out how to fake a RELP message
