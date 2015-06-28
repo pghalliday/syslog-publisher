@@ -56,6 +56,18 @@ git syslog_publisher_install_dir do
     "service[#{syslog_publisher_service_name}]",
     :delayed
   )
+  notifies(
+    :run,
+    "bash[install modules]",
+    :immediately
+  )
+end
+
+bash 'install modules' do
+  code 'npm install'
+  cwd syslog_publisher_install_dir
+  user syslog_publisher_user
+  action :nothing
 end
 
 template config_file do
